@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Pokedex Digital</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <header>
+        <h1>La Pokedex Digital</h1>
+        <p>Selecciona un o varis Pokemon per consultar la seva informacio.</p>
+    </header>
+
+    <div class="container">
+        <aside>
+            <h2>Codis Pokemon</h2>
+            <select id="selector" multiple size="15">
+                <!-- Exercici 1: Omplir amb les opcions de getPokedexEntries() -->
+            </select>
+            <button id="btn-consultar">Consultar</button>
+        </aside>
+
+        <main>
+            <h2>Resultats</h2>
+
+            <!-- Exercici 4: Filtre -->
+            <input type="text" id="filtre" placeholder="Filtrar per nom o tipus...">
+
+            <table id="taula-resultats">
+                <thead>
+                    <tr>
+                        <th>Imatge</th>
+                        <th>Nom</th>
+                        <th>Tipus</th>
+                        <th>HP</th>
+                        <th>Atac</th>
+                        <th>Defensa</th>
+                        <th>Vel.</th>
+                        <th>Alcada</th>
+                        <th>Pes</th>
+                        <th>Accions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Exercici 2/3: Resultats de l'API -->
+                </tbody>
+            </table>
+
+            <!-- Exercici 7: Grafic amb SweetAlert2 (es mostra com a modal, no cal element aqui) -->
+        </main>
+    </div>
+
+    <section id="seccio-equip">
+        <h2>El meu Equip Pokemon <span id="equip-count">(0/6)</span></h2>
+        <div id="llista-equip">
+            <!-- Exercici 5: Equip Pokemon carregat des de localStorage -->
+        </div>
+    </section>
+
+    <script type="module" src="view/app.js"></script>
+</body>
+</html>

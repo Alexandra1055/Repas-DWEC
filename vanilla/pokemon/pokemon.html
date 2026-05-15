@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module" >
+        import { PokemonService } from './service/pokemonService.js';
+        // const urlParams = new URLSearchParams(window.location.search);
+        // const idPokemon = urlParams.get('id');
+        (async()=> {
+            const urlParams = new URL(window.location.href);
+            const idParam = urlParams.searchParams.get('numero');
+            const pokemonService = new PokemonService();
+            const pokemon = await pokemonService.findPokemonByNumber(idParam);
+            const h1Pokemon = document.createElement("h1");
+            const imgPokemon = document.createElement("img");
+            imgPokemon.src = pokemon.imatge;
+            h1Pokemon.innerHTML = pokemon.nom;
+            document.body.appendChild(h1Pokemon);
+            document.body.appendChild(imgPokemon);
+        })();
+        
+
+    </script>
+</body>
+</html>
